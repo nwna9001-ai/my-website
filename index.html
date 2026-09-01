@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KIM ADDONS — Minecraft Addons</title>
+<meta name="description" content="KIM ADDONS — منصة احترافية لإضافات Minecraft Bedrock">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="bg-glow g1"></div><div class="bg-glow g2"></div>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <button class="mobile-btn" id="mobileBtn">☰</button>
+    <div class="top-icons">
+      <button class="icon-btn" title="الإشعارات">🔔<b>3</b></button>
+      <button class="icon-btn" title="الرسائل">✉</button>
+      <button class="cube">🟩</button>
+    </div>
+    <div class="search-wrap">
+      <input id="search" placeholder="إبحث عن إضافات..." autocomplete="off">
+      <span>⌕</span><button id="searchBtn">🔍</button>
+    </div>
+    <nav class="top-nav">
+      <a class="active" href="#home">الرئيسية</a>
+      <a href="#addons">الإضافات</a>
+      <a href="#community">المنشورات</a>
+      <a href="#help">المساعدة</a>
+      <a href="#more">المزيد⌄</a>
+    </nav>
+    <button class="publish" id="publishBtn">نشر إضافتك <strong>+</strong></button>
+  </div>
+</header>
+
+<div class="app">
+<aside class="sidebar" id="sidebar">
+  <div class="brand">
+    <div class="brand-mark">KIM<br><span>ADDONS</span></div>
+    <div class="brand-cube">▣</div>
+  </div>
+  <div class="side-profile">
+    <div class="avatar big">K</div>
+    <div><small>مرحباً بك 👑</small><strong>KimDev</strong></div>
+  </div>
+  <button class="profile-btn" onclick="toast('الملف الشخصي قريباً')">الملف الشخصي　♙</button>
+  <button class="dashboard-btn" onclick="toast('لوحة التحكم ستتصل بالـ Backend لاحقاً')">لوحة التحكم　⚙</button>
+  <div class="side-title">القائمة الرئيسية</div>
+  <a class="side-link active" href="#home">⌂ <span>الرئيسية</span></a>
+  <a class="side-link" href="#addons">◇ <span>الإضافات</span></a>
+  <a class="side-link" href="#favorites">♡ <span>المفضلة</span></a>
+  <a class="side-link" href="#downloads">⇩ <span>التحميلات</span></a>
+  <a class="side-link" href="#comments">▢ <span>التعليقات</span></a>
+  <a class="side-link" href="#posts">▤ <span>المنشورات</span></a>
+  <a class="side-link" href="#notifications">♧ <span>التنبيهات <em>3</em></span></a>
+  <div class="side-title">حسابك</div>
+  <a class="side-link" href="#" onclick="openAuth('login');return false">⇥ <span>تسجيل الدخول</span></a>
+  <a class="side-link" href="#" onclick="openAuth('register');return false">✚ <span>إنشاء حساب</span></a>
+</aside>
+
+<main class="main" id="home">
+  <section class="hero">
+    <div class="hero-copy">
+      <div class="eyebrow">MINECRAFT BEDROCK • COMMUNITY</div>
+      <h1>KIM<br><span>ADDONS</span></h1>
+      <p>أفضل موقع لتحميل إضافات ماين كرافت — اكتشف إضافات مذهلة، شارك إبداعاتك وكن جزءاً من مجتمع KIM.</p>
+      <div class="hero-actions">
+        <button class="neon" onclick="document.querySelector('#addons').scrollIntoView({behavior:'smooth'})">🎮 استكشف الإضافات</button>
+        <button class="glass" onclick="openHelp()">▶ كيفية الاستخدام</button>
+      </div>
+    </div>
+    <div class="hero-orb">K<br><small>ADDONS</small></div>
+  </section>
+
+  <section class="stats-row">
+    <div class="stat"><i>⇩</i><strong>1,482</strong><span>إضافة متوفرة</span></div>
+    <div class="stat"><i>●</i><strong>12,590</strong><span>مستخدم مسجل</span></div>
+    <div class="stat"><i>🎮</i><strong>256,340</strong><span>تحميل</span></div>
+    <div class="stat"><i>★</i><strong>4.8</strong><span>تقييم الموقع</span></div>
+  </section>
+
+  <section class="section" id="categories">
+    <div class="section-head"><div><h2>التصنيفات <span>🎮</span></h2><small>اختر نوع الإضافة الذي تبحث عنه</small></div></div>
+    <div class="categories">
+      <button data-cat="موارد">🎨<b>موارد</b><small>Resource Packs</small></button>
+      <button data-cat="مصمّمات">▣<b>مصمّمات</b><small>Models</small></button>
+      <button data-cat="مابات">🌲<b>مابات</b><small>Maps</small></button>
+      <button data-cat="كائنات">☠<b>كائنات</b><small>Mobs</small></button>
+      <button data-cat="أسلحة">⚔<b>أسلحة</b><small>Weapons</small></button>
+      <button data-cat="إضافات">⚙<b>إضافات</b><small>Addons</small></button>
+      <button data-cat="عالم">▰<b>عالم</b><small>Worlds</small></button>
+    </div>
+  </section>
+
+  <section class="section" id="addons">
+    <div class="section-head">
+      <div><h2>أحدث الإضافات <span>🔥</span></h2><small id="resultCount">8 إضافات</small></div>
+      <button class="view-all" id="viewAll">عرض الكل</button>
+    </div>
+    <div class="addon-grid" id="addonGrid"></div>
+  </section>
+
+  <section class="community section" id="community">
+    <div class="section-head"><div><h2>مشاركات المجتمع <span>💬</span></h2><small>شارك رأيك وتفاعل مع اللاعبين</small></div><button class="glass" onclick="toast('سيتم فتح محرر المنشور قريباً')">+ منشور جديد</button></div>
+    <div class="posts">
+      <article class="post"><div class="avatar">M</div><div><b>MinePro 👑</b><small>منذ 2 دقيقة</small><p>أفضل الإضافات لهذا الأسبوع! 🔥 ما رأيكم في هذه الإضافة؟</p><footer>♡ 89　 ◌ 12　 ◉ 1.2K</footer></div></article>
+      <article class="post"><div class="avatar">C</div><div><b>CraftMaster</b><small>منذ 4 ساعات</small><p>هل جربتم إضافة Ender Dragon؟ تجربة أسطورية جداً!</p><footer>♡ 102　 ◌ 18　 ◉ 1.5K</footer></div></article>
+      <article class="post"><div class="avatar">P</div><div><b>PixelLegend</b><small>منذ 6 ساعات</small><p>اقتراحاتكم للإضافات القادمة؟ نريد أفكاراً جديدة.</p><footer>♡ 156　 ◌ 24　 ◉ 2.3K</footer></div></article>
+    </div>
+  </section>
+</main>
+
+<aside class="rightbar">
+  <div class="welcome">
+    <div class="avatar xl">K</div><span>مرحباً بك 👑</span><h3>KimDev</h3>
+    <div class="level"><span>المستوى 76</span><span>78%</span></div><div class="progress"><i></i></div>
+    <button class="neon" onclick="toast('سيتم فتح الملف الشخصي')">الملف الشخصي　♙</button>
+    <button class="glass" onclick="toast('لوحة التحكم')">لوحة التحكم　⚙</button>
+  </div>
+  <div class="right-menu">
+    <div class="right-title">القائمة الرئيسية</div>
+    <a class="active" href="#home">⌂　الرئيسية</a>
+    <a href="#addons">◇　الإضافات</a>
+    <a href="#favorites">♡　المفضلة</a>
+    <a href="#downloads">⇩　التحميلات</a>
+    <a href="#comments">▢　التعليقات</a>
+    <a href="#posts">▤　المنشورات</a>
+    <a href="#notifications">♧　التنبيهات <em>3</em></a>
+  </div>
+  <div class="side-card">
+    <h3>الإضافة الأكثر تحميلاً 🏆</h3>
+    <div class="mini-addon"><div class="mini-art">🐉</div><div><b>Ender Dragon Expansion</b><small>12,450 تحميل</small></div><strong>⇩</strong></div>
+  </div>
+  <div class="side-card info">
+    <h3>KIM ADDONS</h3><p>وجهتك الأولى لكل ما يخص إضافات ماين كرافت.</p><div class="social">◉　▶　♪　𝕏</div></div>
+  </aside>
+</div>
+
+<div class="modal" id="modal"><div class="modal-box"><button class="close" onclick="closeModal()">×</button><div id="modalContent"></div></div></div>
+<div class="toast" id="toast"></div>
+<script src="app.js"></script>
+</body></html>
