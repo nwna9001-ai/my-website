@@ -40,7 +40,17 @@ button,input,textarea,select{font:inherit}.nav{height:66px;border-bottom:1px sol
 
 <section class="panel"><h2>💬 التعليقات والمجتمع</h2><p class="note">يمكن للمستخدمين تقييم الإضافات وكتابة التعليقات بعد تسجيل الدخول. هذه النسخة تعرض الواجهة فقط.</p><div style="display:flex;gap:8px"><input id="comment" style="flex:1;background:#0a0e0c;color:white;border:1px solid var(--line);border-radius:8px;padding:11px" placeholder="اكتب تعليقًا..."><button class="btn" onclick="comment()">نشر</button></div><div id="comments" style="margin-top:12px"></div></section>
 </div><footer>KIM ADDONS © 2026 — منصة مستقلة لـ Minecraft Bedrock</footer>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
 <script>
+const SUPABASE_URL = "https://bnfyhpdlfwwvtkybxoax.supabase.co";
+const SUPABASE_KEY = "sb_publishable__Cv-taUolxlD2GAbjP549Q_idAf_ark";
+
+const supabase = window.supabase.createClient(
+  SUPABASE_URL,
+  SUPABASE_KEY
+);
+
 let current='all';
 function cat(c,e){current=c;document.querySelectorAll('.chip').forEach(x=>x.classList.remove('active'));e.classList.add('active');filter()}
 function filter(){let q=document.getElementById('search').value.toLowerCase(),n=0;document.querySelectorAll('.card').forEach(x=>{let ok=(current==='all'||x.dataset.cat===current)&&x.dataset.name.toLowerCase().includes(q);x.style.display=ok?'block':'none';if(ok)n++});if(!n)alert('لا توجد نتائج مطابقة.')}
